@@ -6,7 +6,7 @@ void	ft_print_solution(char board[999][999], int n)
 {
 	for (int col = 0; col < n; col++)
 		for (int row = 0; row < n; row++)
-			if (board[col][row] == 'q')
+			if (board[row][col] == 'q')
 				printf(" %i", row);
 	printf("\n");
 }
@@ -72,8 +72,8 @@ void	ft_put_queens(char board[999][999], int n, int col, int row)
 {
 	if (col >= n)
 	{
-		ft_print_solution(board, n);
 		ft_debug_print_board(board, n); // disable debug printing for exam
+		ft_print_solution(board, n);
 	}
 	while (row < n)
 	{
